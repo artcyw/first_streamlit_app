@@ -2,7 +2,7 @@ import streamlit
 import pandas as pd
 import requests
 
-
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json()) # normalize json response and put into pandas table
 
 my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
