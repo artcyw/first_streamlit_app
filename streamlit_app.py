@@ -1,6 +1,8 @@
 import streamlit
 import pandas as pd
 import requests
+import snowflake.connector
+from urllib.error import URLError
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json()) # normalize json response and put into pandas table
